@@ -18,7 +18,7 @@ INSERT INTO `customer` (`id`, `first_name`, `last_name`, `phone_nr`, `e_mail`, `
 INSERT INTO `subscription` (`id`, `customer_id`, `trainer_id`, `subscr_type`, `start_date`) VALUES
   (1, 5, 4, 'TWELVE', '2016-05-05');
 
-INSERT INTO `sport_session` (`id`, `subscription_id`, `customer_id`, `trainer_id`, `date`) VALUES
+INSERT INTO `sport_session` (`id`, `subscription_id`, `customer_id`, `trainer_id`, `date_time`) VALUES
   (1, 1, 5, 4, NULL),
   (2, 1, 5, 4, NULL),
   (3, 1, 5, 4, NULL),
