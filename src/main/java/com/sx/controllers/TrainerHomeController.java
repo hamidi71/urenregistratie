@@ -39,7 +39,7 @@ public class TrainerHomeController {
     //in this case the trainer tasks(enum) are loaded in the view
 
     @RequestMapping("/login2")
-    public String trianerHome(Model model){
+    public String trainerHome(Model model){
         model.addAttribute("trainer_opts", options);
         return "/trainer_home";
     }
@@ -58,8 +58,8 @@ public class TrainerHomeController {
     private enum Trainer_Options {
 
         //trainer tasks:
-        SCHEDULE_SESSIONS("Lessen inplannen of wijzigen", "/edit_customer"),
-        APPROVE_SESSIONS("Lessen goedkeuren", "/edit_trainer"),
+        SCHEDULE_SESSIONS("Lessen inplannen of wijzigen", "/search_session"),
+        APPROVE_SESSIONS("Lessen goedkeuren", "/list_scheduled_sessions"),
         RAPPORTAGE("(Maand)rapportages maken", "/reporting");
 
         //enum variables:

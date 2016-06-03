@@ -9,23 +9,24 @@
 <header>
     <div>
         <h1 title="SX urenregistratie">
-            <img src="../static/images/logoSX.png" title="SX Sports" alt="" width="500" th:src="@{/images/logoSX.png}" />
+            <img src="../static/logoSX.png" title="SX Sports" alt="" width="500" th:src="@{logoSX.png}" />
         </h1>
     </div>
 </header>
-<p class="textcenter">Kies 'Nieuwe trainer' of zoek naar bestaande trainers</p>
-<form class="formlayout" th:action="@{/results}" method="get">
-    <button class="buttonlayout" type="button" onclick="location.href='/newtrainer'">Nieuwe Trainer</button><br/><br/>
-    <input type="search" name="trainerSearch" id="trainerSearchId"/>
+
+
+<p class="textcenter">Zoek sessies op klantnaam</p>
+<form class="formlayout" th:action="@{/sesresults}" method="get">
+    <input type="search" name="customerSessionSearch" id="customerSessionSearchId"/>
     <button class="buttonlayout" type="submit">Zoek</button>
 </form>
 <table align="center">
     <tbody>
     <tr th:each="item : ${searchresults}">
         <td>
-            <form th:action="@{/trainer}" th:object="${trainer}" method="post">
-                <input type="hidden" name="trainer" th:value="${item.id}"/>
+            <form th:action="@{/schedulesession}" th:object="${sportSession}" method="post">
                 <input type="submit" class="clickable_row" th:value="${item}"/>
+                <input type="hidden" name="sportSession" th:value="${item.id}"/>
             </form>
         </td>
     </tr>
