@@ -5,10 +5,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+//import javax.validation.constraints.NotNull;// ASDJ: Not used, required field in html form instead
+//import javax.validation.constraints.Size;//ASDJ: Not used anymore, check in html form instead
 
 @Entity
 //@Table(name="customer") //don't need this, table name is equal to entity class...
 public class Customer {
+//    private static final int PINLENGTH = 5;// not used anymore
 
     @Id
     //@Column(name="id") //don't need this, table name is equal to entity class...
@@ -18,6 +21,7 @@ public class Customer {
     private String lastName;
     private String phoneNr;
     private String eMail;
+//    @Size(min = PINLENGTH, max = PINLENGTH)
     private String pin;
 
     public int getId() {
